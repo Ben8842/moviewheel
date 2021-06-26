@@ -84,7 +84,7 @@ class ToDo extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
-            placeholder="type a new task"
+            placeholder="type a movie title"
             type="text"
             value={this.state.value}
             onChange={this.handleChange}
@@ -105,7 +105,7 @@ class ToDo extends Component {
       <div>
         {content.map((item, index) => {
           return (
-            <div key={index}>
+            <div className="leftside" key={index}>
               <button onClick={() => this.removeTask(index)}>X</button>
               &nbsp;&nbsp;{index + 1} &nbsp; &nbsp; &nbsp; &nbsp; {item}
             </div>
@@ -116,7 +116,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h1>Move of the Week</h1>
+        <h1>Movie of the Week</h1>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
