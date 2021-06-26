@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+div{
+  margin-top: .75em;
+}
+
 .leftside {
   text-align: left;
   margin-left: 20px;
