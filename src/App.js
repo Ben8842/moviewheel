@@ -9,7 +9,7 @@ class ToDo extends Component {
       content: [],
       value: "",
       choice: "",
-      newContent: [],
+   
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,7 +23,7 @@ class ToDo extends Component {
       this.setState((state) => {
         return {
           content: storageTasks,
-          newContent: storageTasks,
+        
         };
       });
     }
@@ -34,10 +34,10 @@ class ToDo extends Component {
   }
 
   randomChoice(arrayOfContent) {
-    var { content, newContent } = this.state;
-    this.shuffle(newContent);
+    var { content,  } = this.state;
+    this.shuffle(content);
     this.setState({
-      choice: newContent[0],
+      choice: content[0],
     });
   }
 
@@ -58,7 +58,7 @@ class ToDo extends Component {
     this.setState((state) => {
       return {
         content: content,
-        newContent: content,
+       
       };
     });
     localStorage.setItem("toDoData", JSON.stringify(content));
@@ -78,7 +78,7 @@ class ToDo extends Component {
   }
 
   render() {
-    var { content, choice, newContent } = this.state;
+    var { content, choice } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -94,11 +94,11 @@ class ToDo extends Component {
             type="submit"
             value="Submit"
           />
-          <button onClick={() => this.randomChoice(newContent)}>
-            choose random task
+          <button onClick={() => this.randomChoice(content)}>
+            choose random movie
           </button>
         </form>
-        <div>Your random task choice is: {choice}</div>
+        <div>The movie of the week is: {choice}</div>
       </div>
     );
     const list = (
@@ -111,22 +111,12 @@ class ToDo extends Component {
             </div>
           );
         })}
-        <div>
-          {" "}
-          {newContent.map((item, index) => {
-            return (
-              <div key={index}>
-                <button onClick={() => this.removeTask(index)}>X</button>
-                &nbsp;&nbsp;{index + 1} &nbsp; &nbsp; &nbsp; &nbsp; {item}
-              </div>
-            );
-          })}
-        </div>
+       
       </div>
     );
     return (
       <div>
-        <h1>To Do Task List!</h1>
+        <h1>Move of the Week</h1>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
