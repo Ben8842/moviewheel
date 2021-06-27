@@ -168,8 +168,8 @@ class ToDo extends Component {
     // localStorage.setItem("toDoData", JSON.stringify(content));
   }
 
-  removeTask(id) {
-    var { content } = this.state;
+  removeTask(e) {
+    /* var { content } = this.state;
 
     var placeholder = this.state.content.filter(function (element) {
       return element !== content[id];
@@ -178,7 +178,22 @@ class ToDo extends Component {
       content: placeholder,
     });
 
-    localStorage.setItem("toDoData", JSON.stringify(placeholder));
+    localStorage.setItem("toDoData", JSON.stringify(placeholder)); */
+    console.log("we are removing something now with id=" + e);
+    fetch("http://localhost:5000/superlistcontent/" + e.target.id, {
+      method: "DELETE",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      referrerPolicy: "no-referrer",
+      //   body: JSON.stringify({ showButtonIndex }),
+    }).then((res) => {
+      //    console.log("something happening here" + res);
+    });
+    this.getList();
   }
 
   render() {
@@ -210,7 +225,13 @@ class ToDo extends Component {
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <button onClick={() => this.removeTask(i)}>X</button>
+              <button
+                onClick={(e) => this.removeTask(e)}
+                type="button"
+                id={listholder[keyName]._id}
+              >
+                X
+              </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
               {listholder[keyName].actualmovietitle}
             </div>

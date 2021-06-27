@@ -44,6 +44,20 @@ app.get("/superlistcontent", (req, res) => {
     )
     .sort("-createdAt");
 });
+
+app.delete("/superlistcontent/:id", (req, res) => {
+  console.log("we are deleting", req.params);
+  // message.findOneAndDelete({ _id: req.params.id });
+  superlistcontent.findByIdAndDelete(req.params.id, function (error) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("delete is a success");
+    }
+  });
+  // message.deleteOne({ _id: "ObjectId(" + req.params.id + ")" });
+  res.send("delete message here");
+});
 /*
 app.post("/authenticate", (req, res) => {
   console.log("posting");
