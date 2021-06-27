@@ -29,6 +29,21 @@ app.post("/superlistcontent", (req, res) => {
   const supermovielistsObject = new superlistcontent(body);
   supermovielistsObject.save();
 });
+
+app.get("/superlistcontent", (req, res) => {
+  console.log("GETTING THE LIST");
+
+  superlistcontent
+    .find(
+      {},
+
+      (error, data) => {
+        // console.log(JSON.stringify(data) + "stringify");
+        return res.json(data);
+      }
+    )
+    .sort("-createdAt");
+});
 /*
 app.post("/authenticate", (req, res) => {
   console.log("posting");

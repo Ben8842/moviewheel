@@ -19,6 +19,7 @@ class ToDo extends Component {
       value: "",
       choice: "",
       placeholder: "",
+      listholder: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,14 +28,14 @@ class ToDo extends Component {
 
   componentDidMount() {
     const storageTasks = JSON.parse(localStorage.getItem("toDoData"));
-
-    if (storageTasks !== null) {
+    this.getList();
+    /* if (storageTasks !== null) {
       this.setState((state) => {
         return {
           content: storageTasks,
         };
-      });
-    }
+      }); 
+    }*/
   }
 
   shuffle(arry) {
@@ -103,16 +104,48 @@ class ToDo extends Component {
       });
   }
 
+  getList() {
+    var { listholder } = this.state;
+    fetch("http://localhost:5000/superlistcontent", {
+      method: "GET",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      referrerPolicy: "no-referrer",
+    })
+      .then((res) => {
+        //    console.log(JSON.stringify(res) + ".thenres");
+        return res.json();
+      })
+      .then((data) => {
+        //  console.log("wild");
+        /* data.map((item) => {
+          item.vote = item.positiveVote.length - item.negativeVote.length;
+          return item;
+        });*/
+        console.log(data);
+        this.setState({
+          listholder: data,
+        });
+
+        console.log(data);
+        //  console.log("getData data data");
+      });
+  }
+
   addTask(newInput) {
     console.log("adding content  " + newInput);
 
     var { content, value, placeholder } = this.state;
     content.push(newInput);
-    this.setState((state) => {
+    /* this.setState((state) => {
       return {
         content: content,
       };
-    });
+    });*/
 
     console.log({ value });
 
@@ -131,7 +164,7 @@ class ToDo extends Component {
     }).then((res) => {
       console.log("trigger save to database...");
     });
-
+    this.getList();
     // localStorage.setItem("toDoData", JSON.stringify(content));
   }
 
@@ -149,7 +182,7 @@ class ToDo extends Component {
   }
 
   render() {
-    var { content, choice } = this.state;
+    var { content, choice, listholder } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -174,11 +207,12 @@ class ToDo extends Component {
     );
     const list = (
       <div>
-        {content.map((item, index) => {
+        {Object.keys(listholder).map((keyName, i) => {
           return (
-            <div className="leftside" key={index}>
-              <button onClick={() => this.removeTask(index)}>X</button>
-              &nbsp;&nbsp;{index + 1} &nbsp; &nbsp; &nbsp; &nbsp; {item}
+            <div className="leftside" key={i}>
+              <button onClick={() => this.removeTask(i)}>X</button>
+              &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+              {listholder[keyName].actualmovietitle}
             </div>
           );
         })}
