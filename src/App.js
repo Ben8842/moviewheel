@@ -6,7 +6,7 @@ class ToDo extends Component {
     super(props);
 
     this.state = {
-      content: [],
+      content: ["Farewell", "Tristan's wheel ticket", "Dr. Strangelove", "Ben's wheel ticket", "She does porn tomorrow", "Outlaw Josie Whales", "Leave No TrackEvent", "Last King of Scotland"],
       value: "",
       choice: "",
    
