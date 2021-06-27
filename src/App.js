@@ -18,6 +18,7 @@ class ToDo extends Component {
       ],
       value: "",
       choice: "",
+      placeholder: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -54,9 +55,10 @@ class ToDo extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({
+    /* this.setState({
       value: "",
-    });
+      
+    });*/
   }
 
   submitSignUp() {
@@ -104,7 +106,7 @@ class ToDo extends Component {
   addTask(newInput) {
     console.log("adding content  " + newInput);
 
-    var { content } = this.state;
+    var { content, value, placeholder } = this.state;
     content.push(newInput);
     this.setState((state) => {
       return {
@@ -112,7 +114,9 @@ class ToDo extends Component {
       };
     });
 
-    fetch("http://localhost:5000/supermovielists", {
+    console.log({ value });
+
+    fetch("http://localhost:5000/superlistcontent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -122,7 +126,7 @@ class ToDo extends Component {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ actualmovietitle: value }),
       // body data type must match "Content-Type" header
     }).then((res) => {
       console.log("trigger save to database...");

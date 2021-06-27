@@ -8,7 +8,7 @@ const buildPath = path.join(__dirname, "..", "build");
 app.use(express.static(buildPath));
 
 const { getMaxListeners } = require("./models/superlistcontent");
-const supermovielists = require("./models/superlistcontent");
+//const supermovielsist = require("./models/superlistcontent");
 const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -20,11 +20,13 @@ app.use(express.json());
 
 app.use(cors(corsOptions));
 
-app.post("/supermovielists", (req, res) => {
-  console.log("posting to the supermovielists");
-  console.log(req.body.content[0]);
-  const body = req.body.content[0];
-  const supermovielistsObject = new supermovielists(body.actualmovietitle);
+const superlistcontent = require("./models/superlistcontent");
+
+app.post("/superlistcontent", (req, res) => {
+  console.log("posting to the superlistcontent");
+  console.log(req.body.actualmovietitle);
+  const body = req.body;
+  const supermovielistsObject = new superlistcontent(body);
   supermovielistsObject.save();
 });
 /*
