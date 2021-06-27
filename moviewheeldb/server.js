@@ -152,7 +152,7 @@ app.get("/scores", (req, res) => {
 });
 
 */
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 app.listen(port, () => {
   console.log("Hello Server Running on " + port);
 });

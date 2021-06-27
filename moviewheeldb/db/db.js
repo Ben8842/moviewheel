@@ -1,6 +1,7 @@
 const Mongoose = require("mongoose");
 
-const uri = "mongodb://127.0.0.1:27017/moviewheeldb";
+const uriold = "mongodb://127.0.0.1:27017/moviewheeldb";
+const uri = process.env.MONGODB_URI;
 
 Mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const connection = Mongoose.connection;
