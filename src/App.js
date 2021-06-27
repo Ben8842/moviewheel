@@ -6,16 +6,6 @@ class ToDo extends Component {
     super(props);
 
     this.state = {
-      content: [
-        "Farewell",
-        "Tristan's wheel ticket",
-        "Dr. Strangelove",
-        "Ben's wheel ticket",
-        "She does porn tomorrow",
-        "Outlaw Josie Whales",
-        "Leave No TrackEvent",
-        "Last King of Scotland",
-      ],
       value: "",
       choice: "",
       placeholder: "",
@@ -27,7 +17,7 @@ class ToDo extends Component {
   }
 
   componentDidMount() {
-    const storageTasks = JSON.parse(localStorage.getItem("toDoData"));
+    // const storageTasks = JSON.parse(localStorage.getItem("toDoData"));
     this.getList();
     /* if (storageTasks !== null) {
       this.setState((state) => {
@@ -42,13 +32,7 @@ class ToDo extends Component {
     arry.sort(() => Math.random() - 0.5);
   }
 
-  randomChoice(arrayOfContent) {
-    var { content } = this.state;
-    this.shuffle(content);
-    this.setState({
-      choice: content[0],
-    });
-  }
+  randomChoice(arrayOfContent) {}
 
   handleChange(event) {
     this.setState({ value: event.target.value });
@@ -139,8 +123,8 @@ class ToDo extends Component {
   addTask(newInput) {
     console.log("adding content  " + newInput);
 
-    var { content, value, placeholder } = this.state;
-    content.push(newInput);
+    var { value, placeholder } = this.state;
+    // content.push(newInput);
     /* this.setState((state) => {
       return {
         content: content,
@@ -197,7 +181,7 @@ class ToDo extends Component {
   }
 
   render() {
-    var { content, choice, listholder } = this.state;
+    var { choice, listholder } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -213,7 +197,7 @@ class ToDo extends Component {
             type="submit"
             value="Submit"
           />
-          <button onClick={() => this.randomChoice(content)}>
+          <button onClick={() => this.randomChoice()}>
             choose random movie
           </button>
         </form>
