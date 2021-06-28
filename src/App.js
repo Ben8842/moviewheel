@@ -17,7 +17,7 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 240,
-      speed: [300, 100, 50, 40, 35, 40, 300, 900, 1200],
+      speed: [300, 200, 100, 50, 45, 100, 300, 900, 1200],
       spinningDone: false,
     };
 
@@ -103,6 +103,11 @@ var interval = setInterval(function(){
       x = 7;
     } else if (tracker < 155) {
       x = 8;
+    } else if (tracker > 302) {
+      clearInterval(this.state.interval);
+      this.setState({
+        spinningDone: true,
+      });
     }
     return speed[x];
   }
