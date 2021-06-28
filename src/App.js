@@ -138,6 +138,11 @@ var interval = setInterval(function(){
       );
       clearInterval(this.state.interval);
     }
+    if (this.state.tracker % 10 === 0) {
+      clearInterval(this.state.interval);
+      this.startRotate();
+      console.log("TENBLOCKS");
+    }
     this.getList();
   }
 
@@ -408,7 +413,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v0.9</h3>
+        <h3>Movie of the Week v1.0</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
