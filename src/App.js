@@ -90,7 +90,7 @@ class ToDo extends Component {
 
   getList() {
     var { listholder } = this.state;
-    fetch("http://localhost:5000/superlistcontent", {
+    fetch("/superlistcontent", {
       method: "GET",
       mode: "cors",
       cache: "no-cache",
@@ -133,7 +133,7 @@ class ToDo extends Component {
 
     console.log({ value });
 
-    fetch("http://localhost:5000/superlistcontent", {
+    fetch("/superlistcontent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -164,7 +164,7 @@ class ToDo extends Component {
 
     localStorage.setItem("toDoData", JSON.stringify(placeholder)); */
     console.log("we are removing something now with id=" + e);
-    fetch("http://localhost:5000/superlistcontent/" + e.target.id, {
+    fetch("/superlistcontent/" + e.target.id, {
       method: "DELETE",
       mode: "cors",
       cache: "no-cache",
