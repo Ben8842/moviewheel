@@ -16,6 +16,7 @@ class ToDo extends Component {
       addMovieFlag: false,
       deleteMovieFlag: false,
       spinFlag: false,
+      randoStop: 240,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -42,7 +43,10 @@ var interval = setInterval(function(){
     var timesRun = 0;
     var rando = this.randomNumber(90, 180);
     console.log("rando value is  " + rando);
+    var interval = setInterval(this.rotationTime.bind(this), 300);
+    this.setState({ interval: interval, randoStop: rando });
 
+    /*
     var interval = setInterval(function () {
       this.rotationTime();
       timesRun += 1;
@@ -50,6 +54,7 @@ var interval = setInterval(function(){
         clearInterval(interval);
       }
     }, 300);
+    */
 
     /* var interval = setInterval(this.rotationTime.bind(this), 300);
     this.setState({ interval: interval });
@@ -97,6 +102,10 @@ var interval = setInterval(function(){
       });
     } else this.setState({ rotator: 0 });
     console.log(this.state.rotator + "timez");
+    if (this.state.tracker === this.state.randoStop) {
+      console.log(this.state.tracker + "tracker stopper");
+      clearInterval(this.state.interval);
+    }
     this.getList();
   }
 
