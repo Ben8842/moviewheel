@@ -44,9 +44,10 @@ var interval = setInterval(function(){
   startRotate() {
     var timesRun = 0;
     if (this.state.randoStop === 175) {
-      var rando = this.randomNumber(174, 165);
+      var rando = this.randomNumber(174, 160);
     }
     console.log("rando value is  " + rando);
+    console.log("randoStop value is  " + this.state.randoStop);
     var interval = setInterval(
       this.rotationTime.bind(this),
       this.speedCalculation()
@@ -149,6 +150,7 @@ var interval = setInterval(function(){
       });
       clearInterval(this.state.interval);
       console.log(this.state);
+      return;
     }
     if (this.state.tracker % 10 === 0) {
       clearInterval(this.state.interval);
