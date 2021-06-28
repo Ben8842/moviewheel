@@ -244,7 +244,7 @@ class ToDo extends Component {
     const list = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
-          console.log("keyName");
+          console.log(keyName);
           return (
             <div className="leftside" key={i}>
               <button
