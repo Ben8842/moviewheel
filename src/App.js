@@ -44,7 +44,7 @@ class ToDo extends Component {
     console.log(tempList);
     this.shuffle(tempList);
     console.log(tempList);
-    this.setState = { randomChoice: tempList };
+    this.setState = { randomChoice: tempList[4] };
   }
 
   handleChange(event) {
