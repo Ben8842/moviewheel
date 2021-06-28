@@ -375,17 +375,7 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div
-                className={
-                  spinFlag && !spinningDone
-                    ? "pickB" + i
-                    : spinFlag && spinningDone
-                    ? "pick" + i
-                    : !spinFlag
-                    ? null
-                    : null
-                }
-              >
+              <div className={"pickB" + i}>
                 <button
                   onClick={(e) => this.removeTask(e)}
                   type="button"
