@@ -84,9 +84,9 @@ var interval = setInterval(function(){
   }
 
   spinMovie() {
-    if (this.state.spinMovieFlag === false) {
-      this.setState({ spinMovieFlag: true });
-    } else this.setState({ spinMovieFlag: false });
+    if (this.state.spinFlag === false) {
+      this.setState({ spinFlag: true });
+    } else this.setState({ spinFlag: false });
   }
 
   rotationTime() {
