@@ -20,7 +20,7 @@ class ToDo extends Component {
   }
 
   startRotate() {
-    var interval = setInterval(this.rotationTime.bind(this), 750);
+    var interval = setInterval(this.rotationTime.bind(this), 300);
     this.setState({ interval: interval });
     if (this.state.tracker === 25) {
       clearInterval(this.state.interval);
@@ -78,10 +78,9 @@ class ToDo extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    /* this.setState({
+    this.setState({
       value: "",
-      
-    });*/
+    });
   }
   /*
   submitSignUp() {
@@ -300,7 +299,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h3>Movie of the Week v0.4</h3>
+        <h3>Movie of the Week v0.5</h3>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
