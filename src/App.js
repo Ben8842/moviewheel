@@ -267,21 +267,28 @@ class ToDo extends Component {
           );
           console.log(keyName);
           console.log(rotator);
-          console.log(keyName + rotator + "  addition of both");
-          console.log(((keyName + rotator) % listholder.length) + "whowzer");
+          console.log(parseInt(keyName, 10) + rotator + "  addition of both");
+          console.log(
+            ((parseInt(keyName, 10) + rotator) % listholder.length) + "whowzer"
+          );
           return (
             <div className="leftside" key={i}>
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={listholder[(keyName + rotator) % listholder.length]._id}
+                id={
+                  listholder[
+                    (parseInt(keyName, 10) + rotator) % listholder.length
+                  ]._id
+                }
               >
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
               {
-                listholder[(keyName + rotator) % listholder.length]
-                  .actualmovietitle
+                listholder[
+                  (parseInt(keyName, 10) + rotator) % listholder.length
+                ].actualmovietitle
               }
             </div>
           );
