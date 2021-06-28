@@ -41,7 +41,7 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    if (this.state.rotator < 7) {
+    if (this.state.rotator < this.state.listholder.length) {
       this.setState({
         rotator: this.state.rotator + 1,
         tracker: this.state.tracker + 1,
