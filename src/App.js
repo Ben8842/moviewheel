@@ -17,7 +17,8 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 240,
-      speed: [1500, 500, 300, 200, 150, 200, 400, 500, 2000],
+      speed: [300, 100, 50, 40, 35, 40, 300, 900, 1200],
+      spinningDone: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -137,6 +138,9 @@ var interval = setInterval(function(){
         this.state.tracker + "tracker stopper" + this.state.randoStop
       );
       clearInterval(this.state.interval);
+      this.setState({
+        spinningDone: true,
+      });
     }
     if (this.state.tracker % 10 === 0) {
       clearInterval(this.state.interval);
@@ -323,6 +327,7 @@ var interval = setInterval(function(){
       addMovieFlag,
       removeMovieFlag,
       spinFlag,
+      spinningDone,
     } = this.state;
 
     const inputBoxAndButton = (
@@ -360,7 +365,15 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div className={"pick" + i}>
+              <div
+                className={
+                  spinFlag && !spinningDone
+                    ? "pick" + i
+                    : spinFlag && spinningDone
+                    ? "pickB" + i
+                    : null
+                }
+              >
                 <button
                   onClick={(e) => this.removeTask(e)}
                   type="button"
@@ -413,7 +426,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.0</h3>
+        <h3>Movie of the Week v1.2</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
