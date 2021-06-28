@@ -245,6 +245,10 @@ class ToDo extends Component {
       <div>
         {Object.keys(listholder).map((keyName, i) => {
           console.log(keyName + "   keyName   " + i + "   EYE?");
+          console.log(
+            "superImportant   " +
+              listholder[(keyName + rotator) % 8].actualmovietitle
+          );
           return (
             <div className="leftside" key={i}>
               <button
@@ -255,7 +259,7 @@ class ToDo extends Component {
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[keyName].actualmovietitle}
+              {listholder[(keyName + rotator) % 8].actualmovietitle}
             </div>
           );
         })}
