@@ -10,6 +10,7 @@ class ToDo extends Component {
       choice: "",
       placeholder: "",
       listholder: "",
+      randomChoice: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +33,16 @@ class ToDo extends Component {
     arry.sort(() => Math.random() - 0.5);
   }
 
-  randomChoice(arrayOfContent) {}
+  randomChoice(arrayOfContent) {
+    var { listholder, randomChoice } = this.state;
+    console.log(listholder.length);
+    var tempList = [];
+    for (var x = 0; x < listholder.length; x++) {
+      tempList.push(listholder[x].actualmovietitle);
+    }
+    this.shuffle(tempList);
+    this.setState = { randomChoice: tempList };
+  }
 
   handleChange(event) {
     this.setState({ value: event.target.value });
@@ -182,7 +192,7 @@ class ToDo extends Component {
   }
 
   render() {
-    var { choice, listholder } = this.state;
+    var { listholder, randomChoice } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -202,7 +212,9 @@ class ToDo extends Component {
             choose random movie
           </button>
         </form>
-        <div>The movie of the week is: {choice}</div>
+        <div>
+          The movie of the week is: {randomChoice !== "" ? randomChoice : "???"}
+        </div>
       </div>
     );
     const list = (
