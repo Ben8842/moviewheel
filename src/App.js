@@ -18,6 +18,14 @@ class ToDo extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  startRotate() {
+    var interval = setInterval(this.rotationTime.bind(this), 250);
+    this.setState({ interval: interval });
+    if (this.state.rotator === 100) {
+      clearInterval(this.state.interval);
+    }
+  }
+
   componentDidMount() {
     // const storageTasks = JSON.parse(localStorage.getItem("toDoData"));
     this.getList();
@@ -32,7 +40,7 @@ class ToDo extends Component {
 
   rotationTime() {
     this.setState({ rotator: this.rotator + 1 });
-    console.log(this.rotator + timez);
+    console.log(this.rotator + "timez");
   }
 
   shuffle(arry) {
@@ -235,11 +243,7 @@ class ToDo extends Component {
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={
-                  listholder[
-                    (keyName + rotator + listholder.length) % listholder.length
-                  ]._id
-                }
+                id={listholder[keyName]._id}
               >
                 X
               </button>
