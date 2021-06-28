@@ -13,6 +13,9 @@ class ToDo extends Component {
       randomChoice: "???",
       rotator: 0,
       tracker: 0,
+      addMovieFlag: false,
+      deleteMovieFlag: false,
+      spinFlag: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -51,6 +54,18 @@ var interval = setInterval(function(){
         };
       }); 
     }*/
+  }
+
+  addFlag() {
+    this.setState({ addMovieFlag: true });
+  }
+
+  removeFlag() {
+    this.setState({ removeMovieFlag: true });
+  }
+
+  spinMovie() {
+    this.setState({ spinFlag: true });
   }
 
   rotationTime() {
@@ -94,6 +109,7 @@ var interval = setInterval(function(){
     this.setState({
       value: "",
     });
+    this.getList();
   }
   /*
   submitSignUp() {
@@ -164,6 +180,8 @@ var interval = setInterval(function(){
         console.log("settingstate?");
         this.setState({
           listholder: data,
+          addMovieFlag: false,
+          removeMovieFlag: false,
         });
 
         console.log(data + " thisisDATA");
@@ -238,7 +256,14 @@ var interval = setInterval(function(){
   }
 
   render() {
-    var { listholder, randomChoice, rotator } = this.state;
+    var {
+      listholder,
+      randomChoice,
+      rotator,
+      addMovieFlag,
+      removeMovieFlag,
+      spinFlag,
+    } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -254,15 +279,23 @@ var interval = setInterval(function(){
             type="submit"
             value="Submit"
           />
-          <div>
-            <button onClick={() => this.randomChoice()}>SPIN THE WHEEL</button>
-          </div>
         </form>
-        <div>The movie of the week is: {randomChoice}</div>
-        <button onClick={() => this.startRotate()}>TEST ROTATION</button>
       </div>
     );
-    const list = (
+
+    const spinButtons = (
+      <div>
+        <div>
+          <button onClick={() => this.randomChoice()}>SPIN THE WHEEL</button>
+        </div>
+        <div>The movie of the week is: {randomChoice}</div>
+        <div>
+          <button onClick={() => this.startRotate()}>TEST ROTATION</button>
+        </div>
+      </div>
+    );
+
+    const listR = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
           console.log(
@@ -284,6 +317,7 @@ var interval = setInterval(function(){
           console.log(
             ((parseInt(keyName, 10) + rotator) % listholder.length) + "whowzer"
           );
+
           return (
             <div className="leftside" key={i}>
               <button
@@ -310,13 +344,58 @@ var interval = setInterval(function(){
         })}
       </div>
     );
+
+    const list = (
+      <div>
+        {Object.keys(listholder).map((keyName, i) => {
+          console.log(
+            keyName +
+              "   keyName   " +
+              i +
+              "   EYE?" +
+              "   length   " +
+              listholder.length
+          );
+          console.log(
+            "superImportant   " +
+              listholder[(keyName + rotator) % listholder.length]
+                .actualmovietitle
+          );
+          console.log(keyName);
+          console.log(rotator);
+          console.log(parseInt(keyName, 10) + rotator + "  addition of both");
+          console.log(
+            ((parseInt(keyName, 10) + rotator) % listholder.length) + "whowzer"
+          );
+
+          return (
+            <div className="leftside" key={i}>
+              &nbsp;&nbsp;
+              {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
+              &nbsp; &nbsp; &nbsp;{" "}
+              {
+                listholder[
+                  (parseInt(keyName, 10) + rotator) % listholder.length
+                ].actualmovietitle
+              }
+            </div>
+          );
+        })}
+      </div>
+    );
+
     return (
       <div>
+        <button onClick={() => this.addFlag()}>Add Movie</button>
+        <button onClick={() => this.removeFlag()}>Remove Movie</button>
+        <button onClick={() => this.spinMovie()}>Spin Movies</button>
         <h3>Movie of the Week v0.5</h3>
         <div>
-          <div>{inputBoxAndButton}</div>
+          <div>{addMovieFlag ? inputBoxAndButton : null}</div>
+          <div>{spinFlag ? spinButtons : null}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
-          <div>{list}</div>
+
+          <div>{removeMovieFlag ? listR : list}</div>
         </div>
       </div>
     );
