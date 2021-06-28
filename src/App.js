@@ -34,13 +34,28 @@ var interval = setInterval(function(){
 }, 2000); 
 */
 
+  randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
   startRotate() {
     var timesRun = 0;
-    var interval = setInterval(this.rotationTime.bind(this), 300);
+    var rando = this.randomNumber(90, 180);
+    console.log("rando value is  " + rando);
+
+    var interval = setInterval(function () {
+      timesRun += 1;
+      if (timesRun === rando) {
+        clearInterval(interval);
+      }
+      this.rotationTime.bind(this);
+    }, 300);
+
+    /* var interval = setInterval(this.rotationTime.bind(this), 300);
     this.setState({ interval: interval });
     if (this.state.tracker === 25) {
       clearInterval(this.state.interval);
-    }
+    }*/
   }
 
   componentDidMount() {
@@ -57,15 +72,21 @@ var interval = setInterval(function(){
   }
 
   addFlag() {
-    this.setState({ addMovieFlag: true });
+    if (this.state.addMovieFlag === false) {
+      this.setState({ addMovieFlag: true });
+    } else this.setState({ addMovieFlag: false });
   }
 
   removeFlag() {
-    this.setState({ removeMovieFlag: true });
+    if (this.state.removeMovieFlag === false) {
+      this.setState({ removeMovieFlag: true });
+    } else this.setState({ removeMovieFlag: false });
   }
 
   spinMovie() {
-    this.setState({ spinFlag: true });
+    if (this.state.spinMovieFlag === false) {
+      this.setState({ spinMovieFlag: true });
+    } else this.setState({ spinMovieFlag: false });
   }
 
   rotationTime() {
@@ -389,7 +410,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v0.5</h3>
+        <h3>Movie of the Week v0.6</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>

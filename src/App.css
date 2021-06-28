@@ -7,8 +7,12 @@
   pointer-events: none;
 }
 
-div{
-  margin-top: .75em;
+div {
+  margin-top: 0.75em;
+}
+
+button {
+  padding: 10px;
 }
 
 .leftside {
