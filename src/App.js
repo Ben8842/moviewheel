@@ -41,13 +41,14 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    if (this.state.rotator < this.state.listholder.length) {
+    if (this.state.rotator < (this.state.listholder.length - 1) {
       this.setState({
         rotator: this.state.rotator + 1,
         tracker: this.state.tracker + 1,
       });
     } else this.setState({ rotator: 0 });
     console.log(this.state.rotator + "timez");
+    this.getList();
   }
 
   shuffle(arry) {
@@ -155,7 +156,7 @@ class ToDo extends Component {
         console.log(data + " thisisDATA");
         //  console.log("getData data data");
       });
-    console.log(listholder + " thisisLISTHOLDER");
+    console.log(listholder + " thisisLISTHOLDER   " + listholder.length + "   also how many we foujd");
   }
 
   addTask(newInput) {
