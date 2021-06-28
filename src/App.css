@@ -16,17 +16,17 @@ button {
 }
 
 .pick0 {
-  background-color: lightcoral;
+  background-color: lightgreen;
   color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 22px;
 }
 
 .pick1 {
-  background-color: lightyellow;
+  background-color: lightgreen;
   color: black;
   margin-right: 20px;
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .pick2 {
@@ -51,24 +51,40 @@ button {
 }
 
 .pick5 {
-  background-color: lightyellow;
+  background-color: lightgreen;
   color: black;
   margin-right: 20px;
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .pick6 {
-  background-color: lightcoral;
+  background-color: lightgreen;
   color: black;
   margin-right: 20px;
-  font-size: 12px;
+  font-size: 22px;
 }
 
 .pick7 {
-  background-color: peachpuff;
+  background-color: lightgreen;
   color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 22px;
+}
+
+.pickb0 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: black;
+  margin-right: 20px;
+  font-size: 20px;
 }
 
 .pickb1 {
@@ -82,9 +98,9 @@ button {
     indigo,
     violet
   );
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 .pickb2 {
   background-image: linear-gradient(
@@ -97,9 +113,9 @@ button {
     indigo,
     violet
   );
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .pickb3 {
@@ -121,9 +137,9 @@ button {
     indigo,
     violet
   );
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .pickb5 {
@@ -137,9 +153,9 @@ button {
     indigo,
     violet
   );
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .pickb6 {
@@ -154,9 +170,9 @@ button {
     violet
   );
 
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .pickb7 {
@@ -171,9 +187,9 @@ button {
     violet
   );
 
-  color: rgba(253, 253, 253, 0);
+  color: black;
   margin-right: 20px;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .leftside {
