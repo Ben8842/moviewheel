@@ -148,7 +148,7 @@ class ToDo extends Component {
           item.vote = item.positiveVote.length - item.negativeVote.length;
           return item;
         });*/
-        console.log(data);
+        console.log("settingstate?");
         this.setState({
           listholder: data,
         });
@@ -265,6 +265,10 @@ class ToDo extends Component {
               listholder[(keyName + rotator) % listholder.length]
                 .actualmovietitle
           );
+          console.log(keyName);
+          console.log(rotator);
+          console.log(keyName + rotator + "  addition of both");
+          console.log(((keyName + rotator) % listholder.length) + "whowzer");
           return (
             <div className="leftside" key={i}>
               <button
