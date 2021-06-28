@@ -17,7 +17,7 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 175,
-      speed: [200, 100, 75, 50, 45, 100, 200, 250, 1400],
+      speed: [150, 75, 60, 50, 45, 75, 150, 200, 1400],
       spinningDone: false,
     };
 
@@ -387,7 +387,17 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div className={"pickb" + i}>
+              <div
+                className={
+                  spinFlag && spinningDone
+                    ? "pickb" + i
+                    : spinFlag && !spinningDone
+                    ? "pick" + i
+                    : !spinFlag
+                    ? null
+                    : null
+                }
+              >
                 <button
                   onClick={(e) => this.removeTask(e)}
                   type="button"
@@ -419,7 +429,17 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div className={"pickb" + i}>
+              <div
+                className={
+                  spinFlag && spinningDone
+                    ? "pickb" + i
+                    : spinFlag && !spinningDone
+                    ? "pick" + i
+                    : !spinFlag
+                    ? null
+                    : null
+                }
+              >
                 &nbsp;&nbsp;
                 {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
                 &nbsp; &nbsp; &nbsp;{" "}
@@ -440,7 +460,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.7</h3>
+        <h3>Movie of the Week v1.8</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
