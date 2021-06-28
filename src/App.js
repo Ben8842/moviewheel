@@ -393,8 +393,8 @@ var interval = setInterval(function(){
                     : spinFlag && !spinningDone
                     ? "pick" + i
                     : !spinFlag
-                    ? null
-                    : null
+                    ? "reg"
+                    : "reg"
                 }
               >
                 <button
@@ -435,8 +435,8 @@ var interval = setInterval(function(){
                     : spinFlag && !spinningDone
                     ? "pick" + i
                     : !spinFlag
-                    ? null
-                    : null
+                    ? "reg"
+                    : "reg"
                 }
               >
                 &nbsp;&nbsp;

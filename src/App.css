@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-div {
+.reg {
   margin-top: 0.75em;
 }
 
@@ -15,19 +15,77 @@ button {
   margin-left: 5px;
 }
 
+.pick0 {
+  background-color: lightcoral;
+  color: black;
+  margin-right: 20px;
+  font-size: 10px;
+}
+
+.pick1 {
+  background-color: lightyellow;
+  color: black;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.pick2 {
+  background-color: lightgreen;
+  color: black;
+  margin-right: 20px;
+  font-size: 22px;
+}
+
 .pick3 {
   background-color: darkgreen;
   color: white;
   margin-right: 20px;
+  font-size: 28px;
 }
 
-.pickb3 {
-  background-color: rgb(0, 0, 0);
-  color: white;
+.pick4 {
+  background-color: lightgreen;
+  color: black;
   margin-right: 20px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
+.pick5 {
+  background-color: lightyellow;
+  color: black;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.pick6 {
+  background-color: lightcoral;
+  color: black;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+.pick7 {
+  background-color: peachpuff;
+  color: black;
+  margin-right: 20px;
+  font-size: 10px;
+}
+
+.pickb1 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  color: rgba(253, 253, 253, 0);
+  margin-right: 20px;
+  font-size: 10px;
+}
 .pickb2 {
   background-image: linear-gradient(
     to right,
@@ -39,35 +97,17 @@ button {
     indigo,
     violet
   );
-}
-
-.pickb1 {
-  background-image: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-}
-
-.pickb1 {
-  background-image: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-
   color: rgba(253, 253, 253, 0);
   margin-right: 20px;
+  font-size: 10px;
+}
+
+.pickb3 {
+  background-color: rgb(244, 248, 2);
+  color: black;
+  margin-right: 20px;
+  font-size: 32px;
+  font-style: bold;
 }
 
 .pickb4 {
@@ -81,6 +121,9 @@ button {
     indigo,
     violet
   );
+  color: rgba(253, 253, 253, 0);
+  margin-right: 20px;
+  font-size: 10px;
 }
 
 .pickb5 {
@@ -94,9 +137,43 @@ button {
     indigo,
     violet
   );
+  color: rgba(253, 253, 253, 0);
+  margin-right: 20px;
+  font-size: 10px;
+}
+
+.pickb6 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
 
   color: rgba(253, 253, 253, 0);
   margin-right: 20px;
+  font-size: 10px;
+}
+
+.pickb7 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+
+  color: rgba(253, 253, 253, 0);
+  margin-right: 20px;
+  font-size: 10px;
 }
 
 .leftside {
