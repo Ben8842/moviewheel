@@ -18,8 +18,21 @@ class ToDo extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  //example of how to run it a certain amount of times
+  //hyou can do random number of times with a random function
+  /*
+  var timesRun = 0;
+var interval = setInterval(function(){
+    timesRun += 1;
+    if(timesRun === 60){
+        clearInterval(interval);
+    }
+    //do whatever here..
+}, 2000); 
+*/
 
   startRotate() {
+    var timesRun = 0;
     var interval = setInterval(this.rotationTime.bind(this), 300);
     this.setState({ interval: interval });
     if (this.state.tracker === 25) {
