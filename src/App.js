@@ -238,13 +238,13 @@ class ToDo extends Component {
           </div>
         </form>
         <div>The movie of the week is: {randomChoice}</div>
-        <button onClick={() => this.startRotate()}>TEST ROTATION</button>
+        <button onClick={() => this.rotationTime()}>TEST ROTATION</button>
       </div>
     );
     const list = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
-          console.log(keyName);
+          console.log(keyName + "   keyName   " + i + "   EYE?");
           return (
             <div className="leftside" key={i}>
               <button
