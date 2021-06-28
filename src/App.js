@@ -44,7 +44,7 @@ var interval = setInterval(function(){
   startRotate() {
     var timesRun = 0;
     if (this.state.randoStop === 175) {
-      var rando = this.randomNumber(165, 174);
+      var rando = this.randomNumber(174, 165);
     }
     console.log("rando value is  " + rando);
     var interval = setInterval(
