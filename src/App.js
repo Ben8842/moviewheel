@@ -46,6 +46,7 @@ class ToDo extends Component {
     console.log(tempList);
     this.setState = { randomChoice: tempList[4] };
     console.log(randomChoice);
+    console.log("is this working?");
   }
 
   handleChange(event) {
@@ -216,9 +217,7 @@ class ToDo extends Component {
             choose random movie
           </button>
         </form>
-        <div>
-          The movie of the week is: {randomChoice !== "" ? randomChoice : "???"}
-        </div>
+        <div>The movie of the week is: {randomChoice}</div>
       </div>
     );
     const list = (
