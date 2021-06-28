@@ -15,10 +15,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-client": "react-scripts start",
+    "install": "cd moviewheeldb; npm install",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "cd moviewheeldb && npm start"
   },
   "eslintConfig": {
     "extends": [
