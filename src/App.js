@@ -104,7 +104,9 @@ var interval = setInterval(function(){
     } else this.setState({ rotator: 0 });
     console.log(this.state.tracker);
     if (this.state.tracker === this.state.randoStop) {
-      console.log(this.state.tracker + "tracker stopper");
+      console.log(
+        this.state.tracker + "tracker stopper" + this.state.randoStop
+      );
       clearInterval(this.state.interval);
     }
     this.getList();
@@ -324,26 +326,27 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <button
-                className={"pick" + i}
-                onClick={(e) => this.removeTask(e)}
-                type="button"
-                id={
+              <div className={"pick" + i}>
+                <button
+                  onClick={(e) => this.removeTask(e)}
+                  type="button"
+                  id={
+                    listholder[
+                      (parseInt(keyName, 10) + rotator) % listholder.length
+                    ]._id
+                  }
+                >
+                  X
+                </button>
+                &nbsp;&nbsp;
+                {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
+                &nbsp; &nbsp; &nbsp;{" "}
+                {
                   listholder[
                     (parseInt(keyName, 10) + rotator) % listholder.length
-                  ]._id
+                  ].actualmovietitle
                 }
-              >
-                X
-              </button>
-              &nbsp;&nbsp;
-              {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
-              &nbsp; &nbsp; &nbsp;{" "}
-              {
-                listholder[
-                  (parseInt(keyName, 10) + rotator) % listholder.length
-                ].actualmovietitle
-              }
+              </div>
             </div>
           );
         })}
@@ -353,36 +356,18 @@ var interval = setInterval(function(){
     const list = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
-          console.log(
-            keyName +
-              "   keyName   " +
-              i +
-              "   EYE?" +
-              "   length   " +
-              listholder.length
-          );
-          console.log(
-            "superImportant   " +
-              listholder[(keyName + rotator) % listholder.length]
-                .actualmovietitle
-          );
-          console.log(keyName);
-          console.log(rotator);
-          console.log(parseInt(keyName, 10) + rotator + "  addition of both");
-          console.log(
-            ((parseInt(keyName, 10) + rotator) % listholder.length) + "whowzer"
-          );
-
           return (
             <div className="leftside" key={i}>
-              &nbsp;&nbsp;
-              {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
-              &nbsp; &nbsp; &nbsp;{" "}
-              {
-                listholder[
-                  (parseInt(keyName, 10) + rotator) % listholder.length
-                ].actualmovietitle
-              }
+              <div className={"pick" + i}>
+                &nbsp;&nbsp;
+                {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
+                &nbsp; &nbsp; &nbsp;{" "}
+                {
+                  listholder[
+                    (parseInt(keyName, 10) + rotator) % listholder.length
+                  ].actualmovietitle
+                }
+              </div>{" "}
             </div>
           );
         })}
@@ -394,7 +379,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v0.8</h3>
+        <h3>Movie of the Week v0.9</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
