@@ -41,7 +41,7 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    if (this.state.rotator < (this.state.listholder.length - 1) {
+    if (this.state.rotator < this.state.listholder.length - 1) {
       this.setState({
         rotator: this.state.rotator + 1,
         tracker: this.state.tracker + 1,
@@ -156,7 +156,12 @@ class ToDo extends Component {
         console.log(data + " thisisDATA");
         //  console.log("getData data data");
       });
-    console.log(listholder + " thisisLISTHOLDER   " + listholder.length + "   also how many we foujd");
+    console.log(
+      listholder +
+        " thisisLISTHOLDER   " +
+        listholder.length +
+        "   also how many we foujd"
+    );
   }
 
   addTask(newInput) {
