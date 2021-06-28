@@ -45,6 +45,7 @@ var interval = setInterval(function(){
     console.log("rando value is  " + rando);
     var interval = setInterval(this.rotationTime.bind(this), 300);
     this.setState({ interval: interval, randoStop: rando });
+    console.log(rando + "startROTATE");
 
     /*
     var interval = setInterval(function () {
@@ -101,7 +102,7 @@ var interval = setInterval(function(){
         tracker: this.state.tracker + 1,
       });
     } else this.setState({ rotator: 0 });
-    console.log(this.state.rotator + "timez");
+    console.log(this.state.tracker);
     if (this.state.tracker === this.state.randoStop) {
       console.log(this.state.tracker + "tracker stopper");
       clearInterval(this.state.interval);
@@ -207,22 +208,15 @@ var interval = setInterval(function(){
           item.vote = item.positiveVote.length - item.negativeVote.length;
           return item;
         });*/
-        console.log("settingstate?");
+
         this.setState({
           listholder: data,
           addMovieFlag: false,
           removeMovieFlag: false,
         });
 
-        console.log(data + " thisisDATA");
         //  console.log("getData data data");
       });
-    console.log(
-      listholder +
-        " thisisLISTHOLDER   " +
-        listholder.length +
-        "   also how many we foujd"
-    );
   }
 
   addTask(newInput) {
@@ -341,12 +335,6 @@ var interval = setInterval(function(){
               listholder[(keyName + rotator) % listholder.length]
                 .actualmovietitle
           );
-          console.log(keyName);
-          console.log(rotator);
-          console.log(parseInt(keyName, 10) + rotator + "  addition of both");
-          console.log(
-            ((parseInt(keyName, 10) + rotator) % listholder.length) + "whowzer"
-          );
 
           return (
             <div className="leftside" key={i}>
@@ -419,7 +407,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v0.7</h3>
+        <h3>Movie of the Week v0.8</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
