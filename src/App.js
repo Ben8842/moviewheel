@@ -20,7 +20,7 @@ class ToDo extends Component {
   }
 
   startRotate() {
-    var interval = setInterval(this.rotationTime.bind(this), 250);
+    var interval = setInterval(this.rotationTime.bind(this), 750);
     this.setState({ interval: interval });
     if (this.state.tracker === 25) {
       clearInterval(this.state.interval);
@@ -69,6 +69,7 @@ class ToDo extends Component {
     this.setState({ randomChoice: tempList[4] });
     console.log(randomChoice);
     console.log("is this working?");
+    clearInterval(this.state.interval);
   }
 
   handleChange(event) {
@@ -246,7 +247,7 @@ class ToDo extends Component {
           </div>
         </form>
         <div>The movie of the week is: {randomChoice}</div>
-        <button onClick={() => this.rotationTime()}>TEST ROTATION</button>
+        <button onClick={() => this.startRotate()}>TEST ROTATION</button>
       </div>
     );
     const list = (
@@ -284,7 +285,9 @@ class ToDo extends Component {
               >
                 X
               </button>
-              &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+              &nbsp;&nbsp;
+              {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
+              &nbsp; &nbsp; &nbsp;{" "}
               {
                 listholder[
                   (parseInt(keyName, 10) + rotator) % listholder.length
