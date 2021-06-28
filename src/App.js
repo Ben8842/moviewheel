@@ -45,7 +45,7 @@ class ToDo extends Component {
       
     });*/
   }
-
+  /*
   submitSignUp() {
     console.log("helloSubmit");
     const { email, username, password } = this.state;
@@ -87,6 +87,7 @@ class ToDo extends Component {
         }
       });
   }
+  */
 
   getList() {
     var { listholder } = this.state;
