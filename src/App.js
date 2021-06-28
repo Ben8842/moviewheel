@@ -244,6 +244,7 @@ class ToDo extends Component {
     const list = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
+          console.log("keyName");
           return (
             <div className="leftside" key={i}>
               <button
@@ -254,7 +255,7 @@ class ToDo extends Component {
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[keyName + rotator].actualmovietitle}
+              {listholder[keyName].actualmovietitle}
             </div>
           );
         })}
