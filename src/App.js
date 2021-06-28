@@ -30,6 +30,7 @@ class ToDo extends Component {
   componentDidMount() {
     // const storageTasks = JSON.parse(localStorage.getItem("toDoData"));
     this.getList();
+
     /* if (storageTasks !== null) {
       this.setState((state) => {
         return {
@@ -151,9 +152,10 @@ class ToDo extends Component {
           listholder: data,
         });
 
-        console.log(data);
+        console.log(data + " thisisDATA");
         //  console.log("getData data data");
       });
+    console.log(listholder + " thisisLISTHOLDER");
   }
 
   addTask(newInput) {
@@ -254,7 +256,7 @@ class ToDo extends Component {
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={listholder[keyName]._id}
+                id={listholder[(keyName + rotator) % 8]._id}
               >
                 X
               </button>
