@@ -11,6 +11,7 @@ class ToDo extends Component {
       placeholder: "",
       listholder: "",
       randomChoice: "???",
+      rotator: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,6 +28,10 @@ class ToDo extends Component {
         };
       }); 
     }*/
+  }
+
+  rotationTime() {
+    this.setState({ rotator: this.rotator + 1 });
   }
 
   shuffle(arry) {
@@ -197,7 +202,7 @@ class ToDo extends Component {
   }
 
   render() {
-    var { listholder, randomChoice } = this.state;
+    var { listholder, randomChoice, rotator } = this.state;
 
     const inputBoxAndButton = (
       <div>
@@ -218,6 +223,7 @@ class ToDo extends Component {
           </button>
         </form>
         <div>The movie of the week is: {randomChoice}</div>
+        <button onClick={() => this.rotationTime()}>TEST ROTATION</button>
       </div>
     );
     const list = (
@@ -228,12 +234,16 @@ class ToDo extends Component {
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={listholder[keyName]._id}
+                id={listholder[(keyName + rotator) % listholder.length]._id}
               >
                 X
               </button>
-              &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[keyName].actualmovietitle}
+              &nbsp;&nbsp;{(i + 1 + rotator) % listholder.length} &nbsp; &nbsp;
+              &nbsp; &nbsp;{" "}
+              {
+                listholder[(keyName + rotator) % listholder.length]
+                  .actualmovietitle
+              }
             </div>
           );
         })}
