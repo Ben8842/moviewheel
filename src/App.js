@@ -10,7 +10,7 @@ class ToDo extends Component {
       choice: "",
       placeholder: "",
       listholder: "",
-      randomChoice: "",
+      randomChoice: "mystery",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -43,7 +43,7 @@ class ToDo extends Component {
     }
     console.log(tempList);
     this.shuffle(tempList);
-    console.log(tempList);
+    console.log(tempList[4] + "next" + tempList);
     this.setState = { randomChoice: tempList[4] };
     console.log(randomChoice);
     console.log("is this working?");
@@ -241,7 +241,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h1>Movie of the Week v0.1</h1>
+        <h1>Movie of the Week v0.2</h1>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
