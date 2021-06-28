@@ -44,7 +44,7 @@ var interval = setInterval(function(){
     console.log("rando value is  " + rando);
 
     var interval = setInterval(function () {
-      this.rotationTime.bind(this);
+      this.rotationTime();
       timesRun += 1;
       if (timesRun === rando) {
         clearInterval(interval);
