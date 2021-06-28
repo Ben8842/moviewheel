@@ -322,23 +322,10 @@ var interval = setInterval(function(){
     const listR = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
-          console.log(
-            keyName +
-              "   keyName   " +
-              i +
-              "   EYE?" +
-              "   length   " +
-              listholder.length
-          );
-          console.log(
-            "superImportant   " +
-              listholder[(keyName + rotator) % listholder.length]
-                .actualmovietitle
-          );
-
           return (
             <div className="leftside" key={i}>
               <button
+                className={"pick" + i}
                 onClick={(e) => this.removeTask(e)}
                 type="button"
                 id={
