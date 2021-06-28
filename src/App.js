@@ -246,22 +246,33 @@ class ToDo extends Component {
     const list = (
       <div>
         {Object.keys(listholder).map((keyName, i) => {
-          console.log(keyName + "   keyName   " + i + "   EYE?");
+          console.log(
+            keyName +
+              "   keyName   " +
+              i +
+              "   EYE?" +
+              "   length   " +
+              listholder.length
+          );
           console.log(
             "superImportant   " +
-              listholder[(keyName + rotator) % 8].actualmovietitle
+              listholder[(keyName + rotator) % listholder.length]
+                .actualmovietitle
           );
           return (
             <div className="leftside" key={i}>
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={listholder[(keyName + rotator) % 8]._id}
+                id={listholder[(keyName + rotator) % listholder.length]._id}
               >
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[(keyName + rotator) % 8].actualmovietitle}
+              {
+                listholder[(keyName + rotator) % listholder.length]
+                  .actualmovietitle
+              }
             </div>
           );
         })}
