@@ -32,6 +32,7 @@ class ToDo extends Component {
 
   rotationTime() {
     this.setState({ rotator: this.rotator + 1 });
+    console.log(this.rotator + timez);
   }
 
   shuffle(arry) {
@@ -234,15 +235,20 @@ class ToDo extends Component {
               <button
                 onClick={(e) => this.removeTask(e)}
                 type="button"
-                id={listholder[(keyName + rotator) % listholder.length]._id}
+                id={
+                  listholder[
+                    (keyName + rotator + listholder.length) % listholder.length
+                  ]._id
+                }
               >
                 X
               </button>
               &nbsp;&nbsp;{(i + 1 + rotator) % listholder.length} &nbsp; &nbsp;
               &nbsp; &nbsp;{" "}
               {
-                listholder[(keyName + rotator) % listholder.length]
-                  .actualmovietitle
+                listholder[
+                  (keyName + rotator + listholder.length) % listholder.length
+                ].actualmovietitle
               }
             </div>
           );
