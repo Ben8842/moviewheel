@@ -12,6 +12,7 @@ class ToDo extends Component {
       listholder: "",
       randomChoice: "???",
       rotator: 0,
+      tracker: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +22,7 @@ class ToDo extends Component {
   startRotate() {
     var interval = setInterval(this.rotationTime.bind(this), 250);
     this.setState({ interval: interval });
-    if (this.state.rotator === 100) {
+    if (this.state.tracker === 25) {
       clearInterval(this.state.interval);
     }
   }
@@ -39,7 +40,9 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    this.setState({ rotator: this.rotator + 1 });
+    if (this.rotator < 8) {
+      this.setState({ rotator: this.rotator + 1, tracker: this.tracker + 1 });
+    } else this.setState({ rotator: 0 });
     console.log(this.rotator + "timez");
   }
 
@@ -247,13 +250,8 @@ class ToDo extends Component {
               >
                 X
               </button>
-              &nbsp;&nbsp;{(i + 1 + rotator) % listholder.length} &nbsp; &nbsp;
-              &nbsp; &nbsp;{" "}
-              {
-                listholder[
-                  (keyName + rotator + listholder.length) % listholder.length
-                ].actualmovietitle
-              }
+              &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+              {listholder[keyName].actualmovietitle}
             </div>
           );
         })}
