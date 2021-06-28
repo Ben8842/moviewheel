@@ -17,7 +17,7 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 175,
-      speed: [200, 100, 75, 50, 45, 100, 200, 600, 900],
+      speed: [200, 100, 75, 50, 45, 100, 200, 250, 1400],
       spinningDone: false,
     };
 
@@ -47,7 +47,7 @@ var interval = setInterval(function(){
       this.speedCalculation()
     );
     if (this.state.randoStop == 175) {
-      var rando = this.randomNumber(174, 160);
+      var rando = this.randomNumber(174, 180);
       this.setState({ interval: interval, randoStop: rando });
     } else {
       this.setState({ interval: interval });
@@ -90,22 +90,34 @@ var interval = setInterval(function(){
     var x;
     if (tracker < 10) {
       x = 0;
-    } else if (tracker < 20) {
+      return speed[x];
+    } else if (tracker < 22) {
       x = 1;
-    } else if (tracker < 40) {
+      return speed[x];
+    } else if (tracker < 42) {
       x = 2;
-    } else if (tracker < 60) {
+      return speed[x];
+    } else if (tracker < 62) {
       x = 3;
-    } else if (tracker < 90) {
+      return speed[x];
+    } else if (tracker < 92) {
       x = 4;
-    } else if (tracker < 120) {
+      return speed[x];
+    } else if (tracker < 122) {
       x = 5;
-    } else if (tracker < 140) {
+      return speed[x];
+    } else if (tracker < 142) {
       x = 6;
-    } else if (tracker < 150) {
+      return speed[x];
+    } else if (tracker > 142) {
       x = 7;
-    } else if (tracker < 155) {
+      return speed[x];
+    } else if (
+      tracker > 152 &&
+      this.state.randoStop - tracker < this.randomNumber(3, 10)
+    ) {
       x = 8;
+      return speed[x];
     } else if (tracker > 302) {
       clearInterval(this.state.interval);
       this.setState({
@@ -375,7 +387,7 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div className={"pickB" + i}>
+              <div className={"pickb" + i}>
                 <button
                   onClick={(e) => this.removeTask(e)}
                   type="button"
@@ -407,7 +419,7 @@ var interval = setInterval(function(){
         {Object.keys(listholder).map((keyName, i) => {
           return (
             <div className="leftside" key={i}>
-              <div className={"pick" + i}>
+              <div className={"pickb" + i}>
                 &nbsp;&nbsp;
                 {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
                 &nbsp; &nbsp; &nbsp;{" "}

@@ -21,13 +21,13 @@ button {
   margin-right: 20px;
 }
 
-.pickB3 {
+.pickb3 {
   background-color: rgb(0, 0, 0);
   color: white;
   margin-right: 20px;
 }
 
-.pickB2 {
+.pickb2 {
   background-image: linear-gradient(
     to right,
     red,
@@ -43,7 +43,7 @@ button {
   margin-right: 20px;
 }
 
-.pickB4 {
+.pickb4 {
   background-image: linear-gradient(
     to right,
     red,
