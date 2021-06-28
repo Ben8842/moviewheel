@@ -40,7 +40,7 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    if (this.state.rotator < 8) {
+    if (this.state.rotator < 7) {
       this.setState({
         rotator: this.state.rotator + 1,
         tracker: this.state.tracker + 1,
@@ -238,7 +238,7 @@ class ToDo extends Component {
           </div>
         </form>
         <div>The movie of the week is: {randomChoice}</div>
-        <button onClick={() => this.rotationTime()}>TEST ROTATION</button>
+        <button onClick={() => this.startRotate()}>TEST ROTATION</button>
       </div>
     );
     const list = (
@@ -254,7 +254,7 @@ class ToDo extends Component {
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[keyName].actualmovietitle}
+              {listholder[keyname + rotator].actualmovietitle}
             </div>
           );
         })}
