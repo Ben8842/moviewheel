@@ -42,18 +42,18 @@ var interval = setInterval(function(){
   }
 
   startRotate() {
-    var timesRun = 0;
-    if (this.state.randoStop === 175) {
-      var rando = this.randomNumber(174, 160);
-    }
-    console.log("rando value is  " + rando);
-    console.log("randoStop value is  " + this.state.randoStop);
     var interval = setInterval(
       this.rotationTime.bind(this),
       this.speedCalculation()
     );
-    this.setState({ interval: interval, randoStop: rando });
-    console.log(rando + "startROTATE");
+    if (this.state.randoStop == 175) {
+      var rando = this.randomNumber(174, 160);
+      this.setState({ interval: interval, randoStop: rando });
+    } else {
+      this.setState({ interval: interval });
+    }
+    console.log("rando value is  " + rando);
+    console.log("randoStop value is  " + this.state.randoStop);
 
     /*
     var interval = setInterval(function () {
@@ -436,7 +436,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.4</h3>
+        <h3>Movie of the Week v1.5</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
