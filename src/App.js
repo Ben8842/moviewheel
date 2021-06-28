@@ -41,9 +41,12 @@ class ToDo extends Component {
 
   rotationTime() {
     if (this.rotator < 8) {
-      this.setState({ rotator: this.rotator + 1, tracker: this.tracker + 1 });
+      this.setState({
+        rotator: this.state.rotator + 1,
+        tracker: this.state.tracker + 1,
+      });
     } else this.setState({ rotator: 0 });
-    console.log(this.rotator + "timez");
+    console.log(this.state.rotator + "timez");
   }
 
   shuffle(arry) {
