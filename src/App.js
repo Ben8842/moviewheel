@@ -45,6 +45,7 @@ class ToDo extends Component {
     this.shuffle(tempList);
     console.log(tempList);
     this.setState = { randomChoice: tempList[4] };
+    console.log(randomChoice);
   }
 
   handleChange(event) {
@@ -241,7 +242,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h1>Movie of the Week v0</h1>
+        <h1>Movie of the Week v0.1</h1>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
