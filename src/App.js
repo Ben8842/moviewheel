@@ -44,11 +44,11 @@ var interval = setInterval(function(){
     console.log("rando value is  " + rando);
 
     var interval = setInterval(function () {
+      this.rotationTime.bind(this);
       timesRun += 1;
       if (timesRun === rando) {
         clearInterval(interval);
       }
-      this.rotationTime.bind(this);
     }, 300);
 
     /* var interval = setInterval(this.rotationTime.bind(this), 300);
@@ -410,7 +410,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v0.6</h3>
+        <h3>Movie of the Week v0.7</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
