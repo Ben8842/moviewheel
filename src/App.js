@@ -254,7 +254,7 @@ class ToDo extends Component {
                 X
               </button>
               &nbsp;&nbsp;{i + 1} &nbsp; &nbsp; &nbsp; &nbsp;{" "}
-              {listholder[keyname + rotator].actualmovietitle}
+              {listholder[keyName + rotator].actualmovietitle}
             </div>
           );
         })}
