@@ -33,14 +33,17 @@ class ToDo extends Component {
     arry.sort(() => Math.random() - 0.5);
   }
 
-  randomChoice(arrayOfContent) {
+  randomChoice() {
     var { listholder, randomChoice } = this.state;
     console.log(listholder.length);
     var tempList = [];
     for (var x = 0; x < listholder.length; x++) {
       tempList.push(listholder[x].actualmovietitle);
+      console.log("pushing" + listholder[x].actualmovietitle);
     }
+    console.log(tempList);
     this.shuffle(tempList);
+    console.log(tempList);
     this.setState = { randomChoice: tempList };
   }
 
@@ -238,7 +241,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h1>Movie of the Week</h1>
+        <h1>Movie of the Week v0</h1>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
