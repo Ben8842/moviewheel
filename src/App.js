@@ -16,7 +16,7 @@ class ToDo extends Component {
       addMovieFlag: false,
       deleteMovieFlag: false,
       spinFlag: false,
-      randoStop: 240,
+      randoStop: 175,
       speed: [300, 200, 100, 50, 45, 100, 300, 900, 1200],
       spinningDone: false,
     };
@@ -43,7 +43,9 @@ var interval = setInterval(function(){
 
   startRotate() {
     var timesRun = 0;
-    var rando = this.randomNumber(120, 220);
+    if (this.state.randoStop === 175) {
+      var rando = this.randomNumber(165, 174);
+    }
     console.log("rando value is  " + rando);
     var interval = setInterval(
       this.rotationTime.bind(this),
@@ -142,10 +144,11 @@ var interval = setInterval(function(){
       console.log(
         this.state.tracker + "tracker stopper" + this.state.randoStop
       );
-      clearInterval(this.state.interval);
       this.setState({
         spinningDone: true,
       });
+      clearInterval(this.state.interval);
+      console.log(this.state);
     }
     if (this.state.tracker % 10 === 0) {
       clearInterval(this.state.interval);
@@ -431,7 +434,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.2</h3>
+        <h3>Movie of the Week v1.4</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
