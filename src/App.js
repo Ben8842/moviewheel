@@ -40,7 +40,7 @@ class ToDo extends Component {
   }
 
   rotationTime() {
-    if (this.rotator < 8) {
+    if (this.state.rotator < 8) {
       this.setState({
         rotator: this.state.rotator + 1,
         tracker: this.state.tracker + 1,
@@ -233,9 +233,9 @@ class ToDo extends Component {
             type="submit"
             value="Submit"
           />
-          <button onClick={() => this.randomChoice()}>
-            choose random movie
-          </button>
+          <div>
+            <button onClick={() => this.randomChoice()}>SPIN THE WHEEL</button>
+          </div>
         </form>
         <div>The movie of the week is: {randomChoice}</div>
         <button onClick={() => this.rotationTime()}>TEST ROTATION</button>
@@ -262,7 +262,7 @@ class ToDo extends Component {
     );
     return (
       <div>
-        <h1>Movie of the Week v0.3</h1>
+        <h3>Movie of the Week v0.4</h3>
         <div>
           <div>{inputBoxAndButton}</div>
           <div> &nbsp; &nbsp; &nbsp;</div>
