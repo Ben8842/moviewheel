@@ -17,7 +17,7 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 175,
-      speed: [300, 200, 100, 50, 45, 100, 300, 900, 1200],
+      speed: [200, 100, 75, 50, 45, 100, 200, 600, 900],
       spinningDone: false,
     };
 
@@ -378,9 +378,11 @@ var interval = setInterval(function(){
               <div
                 className={
                   spinFlag && !spinningDone
-                    ? "pick" + i
-                    : spinFlag && spinningDone
                     ? "pickB" + i
+                    : spinFlag && spinningDone
+                    ? "pick" + i
+                    : !spinFlag
+                    ? null
                     : null
                 }
               >
@@ -436,7 +438,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.6</h3>
+        <h3>Movie of the Week v1.7</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
