@@ -17,6 +17,7 @@ class ToDo extends Component {
       deleteMovieFlag: false,
       spinFlag: false,
       randoStop: 240,
+      speed: [1500, 500, 300, 200, 150, 200, 400, 500, 2000],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,9 +42,12 @@ var interval = setInterval(function(){
 
   startRotate() {
     var timesRun = 0;
-    var rando = this.randomNumber(90, 180);
+    var rando = this.randomNumber(120, 220);
     console.log("rando value is  " + rando);
-    var interval = setInterval(this.rotationTime.bind(this), 300);
+    var interval = setInterval(
+      this.rotationTime.bind(this),
+      this.speedCalculation()
+    );
     this.setState({ interval: interval, randoStop: rando });
     console.log(rando + "startROTATE");
 
@@ -75,6 +79,31 @@ var interval = setInterval(function(){
         };
       }); 
     }*/
+  }
+
+  speedCalculation() {
+    var { speed, tracker } = this.state;
+    var x;
+    if (tracker < 10) {
+      x = 0;
+    } else if (tracker < 20) {
+      x = 1;
+    } else if (tracker < 40) {
+      x = 2;
+    } else if (tracker < 60) {
+      x = 3;
+    } else if (tracker < 90) {
+      x = 4;
+    } else if (tracker < 120) {
+      x = 5;
+    } else if (tracker < 140) {
+      x = 6;
+    } else if (tracker < 150) {
+      x = 7;
+    } else if (tracker < 155) {
+      x = 8;
+    }
+    return speed[x];
   }
 
   addFlag() {
