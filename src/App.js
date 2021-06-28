@@ -175,7 +175,7 @@ var interval = setInterval(function(){
   shuffle(arry) {
     arry.sort(() => Math.random() - 0.5);
   }
-
+  /*
   randomChoice() {
     var { listholder, randomChoice } = this.state;
     console.log(listholder.length);
@@ -192,6 +192,7 @@ var interval = setInterval(function(){
     console.log("is this working?");
     clearInterval(this.state.interval);
   }
+  */
 
   handleChange(event) {
     this.setState({ value: event.target.value });
@@ -370,14 +371,12 @@ var interval = setInterval(function(){
       </div>
     );
 
+    //  <button onClick={() => this.randomChoice()}>SPIN THE WHEEL</button>
+    // <div>The movie of the week is: {randomChoice}</div>
     const spinButtons = (
       <div>
         <div>
-          <button onClick={() => this.randomChoice()}>SPIN THE WHEEL</button>
-        </div>
-        <div>The movie of the week is: {randomChoice}</div>
-        <div>
-          <button onClick={() => this.startRotate()}>TEST ROTATION</button>
+          <button onClick={() => this.startRotate()}>SPIN THE MOVIES</button>
         </div>
       </div>
     );
@@ -460,7 +459,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v1.8</h3>
+        <h3>Movie of the Week v1.9</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>

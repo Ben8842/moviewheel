@@ -25,9 +25,36 @@ button {
   background-color: rgb(0, 0, 0);
   color: white;
   margin-right: 20px;
+  font-size: 20px;
 }
 
 .pickb2 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+.pickb1 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+.pickb1 {
   background-image: linear-gradient(
     to right,
     red,
@@ -44,6 +71,19 @@ button {
 }
 
 .pickb4 {
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+}
+
+.pickb5 {
   background-image: linear-gradient(
     to right,
     red,
