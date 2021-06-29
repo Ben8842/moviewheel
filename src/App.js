@@ -16,8 +16,8 @@ class ToDo extends Component {
       addMovieFlag: false,
       deleteMovieFlag: false,
       spinFlag: false,
-      randoStop: 175,
-      speed: [150, 75, 60, 50, 45, 75, 150, 200, 1400],
+      randoStop: 220,
+      speed: [150, 75, 60, 50, 45, 75, 150, 200, 2500],
       spinningDone: false,
     };
 
@@ -46,8 +46,8 @@ var interval = setInterval(function(){
       this.rotationTime.bind(this),
       this.speedCalculation()
     );
-    if (this.state.randoStop == 175) {
-      var rando = this.randomNumber(174, 180);
+    if (this.state.randoStop == 220) {
+      var rando = this.randomNumber(174, 190);
       this.setState({ interval: interval, randoStop: rando });
     } else {
       this.setState({ interval: interval });
@@ -114,7 +114,7 @@ var interval = setInterval(function(){
       return speed[x];
     } else if (
       tracker > 152 &&
-      this.state.randoStop - tracker < this.randomNumber(3, 10)
+      this.state.randoStop - tracker < this.randomNumber(3, 15)
     ) {
       x = 8;
       return speed[x];
@@ -375,7 +375,7 @@ var interval = setInterval(function(){
     // <div>The movie of the week is: {randomChoice}</div>
     const spinButtons = (
       <div>
-        <div className="spinrain">
+        <div>
           <button className="spinrain" onClick={() => this.startRotate()}>
             SPIN THE MOVIES
           </button>
@@ -455,10 +455,18 @@ var interval = setInterval(function(){
 
     return (
       <div>
-        <button onClick={() => this.addFlag()}>Add Movie</button>
-        <button onClick={() => this.removeFlag()}>Remove Movie</button>
-        <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v2.1</h3>
+        <div>
+          <button className="topbuttons" onClick={() => this.addFlag()}>
+            Add Movie
+          </button>
+          <button className="topbuttons" onClick={() => this.removeFlag()}>
+            Remove Movie
+          </button>
+          <button className="topbuttons" onClick={() => this.spinMovie()}>
+            Spin Movies
+          </button>
+        </div>
+        <h3>Movie of the Week v2.2</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>

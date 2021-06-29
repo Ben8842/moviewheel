@@ -21,6 +21,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick1 {
@@ -29,6 +30,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick2 {
@@ -37,6 +39,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick3 {
@@ -45,6 +48,7 @@ button {
   margin-right: 20px;
   font-size: 24px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick4 {
@@ -53,6 +57,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick5 {
@@ -61,6 +66,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick6 {
@@ -69,6 +75,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pick7 {
@@ -77,6 +84,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb0 {
@@ -94,6 +102,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb1 {
@@ -111,6 +120,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 .pickb2 {
   background-image: linear-gradient(
@@ -127,6 +137,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb3 {
@@ -136,6 +147,7 @@ button {
   font-size: 24px;
   font-style: bold;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb4 {
@@ -153,6 +165,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb5 {
@@ -170,6 +183,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb6 {
@@ -188,6 +202,7 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
 }
 
 .pickb7 {
@@ -206,6 +221,14 @@ button {
   margin-right: 20px;
   font-size: 22px;
   height: 2em;
+  margin-left: 4px;
+}
+
+.topbuttons {
+  margin-top: 6px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
 }
 
 .spinrain {
@@ -213,6 +236,7 @@ button {
   border-width: 10px;
   background-color: yellow;
   color: black;
+  font-style: bold;
 }
 
 .leftside {
