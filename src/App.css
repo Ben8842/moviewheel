@@ -9,6 +9,7 @@
 
 .reg {
   margin-top: 0.75em;
+  text-align: left;
 }
 
 button {
@@ -22,6 +23,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick1 {
@@ -31,6 +33,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick2 {
@@ -40,6 +43,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick3 {
@@ -49,6 +53,7 @@ button {
   font-size: 24px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick4 {
@@ -58,6 +63,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick5 {
@@ -67,6 +73,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick6 {
@@ -76,6 +83,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pick7 {
@@ -85,6 +93,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb0 {
@@ -103,6 +112,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb1 {
@@ -121,6 +131,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 .pickb2 {
   background-image: linear-gradient(
@@ -138,6 +149,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb3 {
@@ -148,6 +160,7 @@ button {
   font-style: bold;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb4 {
@@ -166,6 +179,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb5 {
@@ -184,6 +198,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb6 {
@@ -203,6 +218,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .pickb7 {
@@ -222,6 +238,7 @@ button {
   font-size: 22px;
   height: 2em;
   margin-left: 4px;
+  text-align: center;
 }
 
 .topbuttons {
@@ -240,7 +257,6 @@ button {
 }
 
 .leftside {
-  text-align: left;
   margin-left: 20px;
 }
 
