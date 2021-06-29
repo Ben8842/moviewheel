@@ -375,8 +375,10 @@ var interval = setInterval(function(){
     // <div>The movie of the week is: {randomChoice}</div>
     const spinButtons = (
       <div>
-        <div>
-          <button onClick={() => this.startRotate()}>SPIN THE MOVIES</button>
+        <div className="spinrain">
+          <button className="spinrain" onClick={() => this.startRotate()}>
+            SPIN THE MOVIES
+          </button>
         </div>
       </div>
     );
@@ -439,9 +441,6 @@ var interval = setInterval(function(){
                     : "reg"
                 }
               >
-                &nbsp;&nbsp;
-                {((parseInt(i, 10) + rotator) % listholder.length) + 1} &nbsp;
-                &nbsp; &nbsp; &nbsp;{" "}
                 {
                   listholder[
                     (parseInt(keyName, 10) + rotator) % listholder.length
@@ -459,7 +458,7 @@ var interval = setInterval(function(){
         <button onClick={() => this.addFlag()}>Add Movie</button>
         <button onClick={() => this.removeFlag()}>Remove Movie</button>
         <button onClick={() => this.spinMovie()}>Spin Movies</button>
-        <h3>Movie of the Week v2.0</h3>
+        <h3>Movie of the Week v2.1</h3>
         <div>
           <div>{addMovieFlag ? inputBoxAndButton : null}</div>
           <div>{spinFlag ? spinButtons : null}</div>
