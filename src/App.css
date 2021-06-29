@@ -20,6 +20,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick1 {
@@ -27,6 +28,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick2 {
@@ -34,6 +36,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick3 {
@@ -41,6 +44,7 @@ button {
   color: white;
   margin-right: 20px;
   font-size: 28px;
+  height: 2em;
 }
 
 .pick4 {
@@ -48,6 +52,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick5 {
@@ -55,6 +60,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick6 {
@@ -62,6 +68,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pick7 {
@@ -69,6 +76,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 22px;
+  height: 2em;
 }
 
 .pickb0 {
@@ -85,6 +93,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 
 .pickb1 {
@@ -101,6 +110,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 .pickb2 {
   background-image: linear-gradient(
@@ -116,14 +126,16 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 
 .pickb3 {
   background-color: rgb(244, 248, 2);
   color: black;
   margin-right: 20px;
-  font-size: 32px;
+  font-size: 28px;
   font-style: bold;
+  height: 2em;
 }
 
 .pickb4 {
@@ -140,6 +152,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 
 .pickb5 {
@@ -156,6 +169,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 
 .pickb6 {
@@ -173,6 +187,7 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
 }
 
 .pickb7 {
@@ -190,6 +205,14 @@ button {
   color: black;
   margin-right: 20px;
   font-size: 20px;
+  height: 2em;
+}
+
+.spinrain {
+  border-radius: 15px;
+  border-width: 10px;
+  background-color: yellow;
+  color: black;
 }
 
 .leftside {
