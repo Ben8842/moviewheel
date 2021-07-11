@@ -42,6 +42,8 @@ var interval = setInterval(function(){
   }
 
   startRotate() {
+    this.setState({ spinFlag: false });
+
     var interval = setInterval(
       this.rotationTime.bind(this),
       this.speedCalculation()
